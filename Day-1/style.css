@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: rgb(0, 0, 0);
+}
+.fa-bell{
+    font-size: 200px;
+}
+
+.bell-notification{
+    color: white;
+    position: relative;
+    animation: bell 1s linear infinite alternate-reverse; 
+    transform-origin: top;
+}
+
+
+@keyframes bell {
+    0%{
+        transform: rotate(-20deg);
+    }
+    100%{
+        transform: rotate(20deg);
+    }
+    
+}
+.bell-notification::after{
+    content:attr(current-count);
+    position: absolute;
+    top: -1%;
+    right:-10%;
+    width: 60px;
+    height: 60px;
+ background-color: red;
+ border-radius: 50%;
+display: grid;
+place-items: center;
+font-size: 30px;
+border: 10px solid black;
+}
